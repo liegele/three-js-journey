@@ -47,6 +47,7 @@ const camera = new THREE.PerspectiveCamera(
 
 //Controls
 const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true;
 
 /* const aspectRatio = sizes.width / sizes.height;
 console.log(aspectRatio);
@@ -90,6 +91,9 @@ const tick = () => {
 
   // Render
   renderer.render(scene, camera);
+
+  //Update controls
+  controls.update();
 
   // Call tick again on the next frame
   window.requestAnimationFrame(tick);
