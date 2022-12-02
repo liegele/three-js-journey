@@ -89,8 +89,18 @@ const tick = () => {
 
 tick();
 
-/* *
+/**
 lil-gui debug interface
  */
 const gui = new GUI();
 gui.add(document, 'title');
+//position
+const folder1 = gui.addFolder('Position');
+folder1.add(mesh.position, 'x', -3, 3, 0.1);
+folder1.add(mesh.position, 'y', -3, 3, 0.1);
+folder1.add(mesh.position, 'z', -3, 3, 0.1);
+//rotation
+const folder2 = gui.addFolder('Rotation');
+folder2.add(mesh.rotation, 'x', -6, 6, 0.1);
+folder2.add(mesh.rotation, 'y', -6, 6, 0.1);
+folder2.add(mesh.rotation, 'z', -6, 6, 0.1);
